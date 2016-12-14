@@ -1,0 +1,130 @@
+@charset 'UTF-8';
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,700,700italic);
+
+
+
+
+/* 1. Variables, Helpers, and Theming
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/**
+ * These are configuration and helper partials, i.e. global
+ * variables, mixins, functions, and placeholders.
+ *
+ * Theme configuration can be found in the partial
+ * `variables/_theming.scss`.
+ *
+ * None of the code in these files should output any CSS
+ * when compiled.
+ *
+ * Contents of the `_mixins.scss` and `_functions.scss`
+ * partials may be further split into additional files if
+ * necessary later on down the road.
+ *
+ * @see https://sass-guidelin.es/#abstracts-folder
+ */
+
+@import 'core/style/variables/variables';
+
+@import 'core/style/utilities/mixins';
+
+@import 'core/style/utilities/functions';
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+
+
+/* 3. Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/**
+ * This is boilerplate code for the project, including
+ * typographic rules, standard HTML element styles,
+ * resets, and animations.
+ *
+ * @see https://sass-guidelin.es/#base-folder
+ */
+
+@import 'core/style/base/base';
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+
+
+/* 4. Layout-Related Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/**
+ * Here are the layout-related stylesheets.
+ *
+ * Styles for individual layout components are found in
+ * their espective directories and injected by
+ * `gulp-inject` automatically in section #6, so there's
+ * no need to `@import` them manually.
+ *
+ * @see https://sass-guidelin.es/#layout-folder
+ */
+
+@import 'core/style/layout/layout';
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+  /**
+ *  If you want to override some bootstrap variables, you have to change values here.
+ *  The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
+ */
+$navbar-inverse-link-color: #5AADBB;
+$icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+$fa-font-path: "../../bower_components/font-awesome/fonts";
+@import "../../bower_components/font-awesome/scss/font-awesome.scss";
+
+
+
+
+/* 2. Vendors Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/**
+ * Do not remove the comments in this section.
+ * They are markers used by `wiredep` to inject dependencies
+ * as defined in `bower.json`.
+ */
+
+// bower:scss
+// endbower
+
+/**
+ * Vendors styles are found in their respective directories
+ * under `bower_components/`.
+ * They are injected by `wiredep` automatically, so
+ * there's no need to `@import` them manually.
+ */
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+
+
+/* Component & Page-Specific Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/**
+ * Do not remove the comments in this section.
+ * They are markers used by `gulp-inject` to inject the Sass
+ * files for Layouts, Components, and Pages automatically.
+ */
+
+// injector
+// endinjector
+
+/**
+ * Page-specific styles are found in their respective
+ * directories.  They are injected above by `gulp-inject`
+ * automatically, so there's no need to `@import` them
+ * manually.
+ */
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––– */

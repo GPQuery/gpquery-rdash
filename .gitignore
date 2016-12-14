@@ -1,0 +1,97 @@
+# ===============================
+#   Gitignore by Joho
+# ===============================
+# Version   v0.3.3
+# Author    Jonathan Ho <joho@joho.io>
+# Created   17-May-2016
+# Updated   23-Sep-2016
+# Docs      http://git-scm.com/docs/gitignore
+# ===============================
+
+
+
+
+# -------------------------------
+#   Node.js/npm/Bower
+# -------------------------------
+
+bower_components/
+node_modules/
+npm-debug.log
+
+# -------------------------------
+
+
+
+
+# -------------------------------
+#   Build/Runtime/Logs
+# -------------------------------
+
+*.css.map
+*.out
+*.pid
+*.seed
+.harvest/
+.idea/
+.sass-cache/
+.tmp/
+coverage/
+dist/
+journal/
+lib-cov/
+logs/
+pids/
+public/
+release/
+report/
+results/
+src/release
+
+# -------------------------------
+
+
+
+
+# -------------------------------
+#   Database/Packages
+# -------------------------------
+
+*.7z
+*.csv
+*.dmg
+*.gz
+*.iso
+*.jar
+*.ldf
+*.log
+*.mdf
+*.rar
+*.sql
+*.sqlite
+*.tar
+*.zip
+
+# -------------------------------
+
+
+
+
+# -------------------------------
+#   Generated & Misc
+# -------------------------------
+
+*~
+*.lnk
+.DS_Store*
+._*
+*.sublime*
+~*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+packages
+ignore
+Thumbs.db
+
+# -------------------------------

@@ -1,0 +1,49 @@
+# ===============================
+#   Editorconfig by Joho
+# ===============================
+# Version   v0.2.1
+# Author    Jonathan Ho <joho@joho.io>
+# Created   29-Jun-2016
+# Updated   12-Oct-2016
+# Docs      http://editorconfig.org
+# ===============================
+
+
+
+
+# -------------------------------
+#   Topmost Editorconfig File
+# -------------------------------
+
+root = true
+
+# -------------------------------
+
+
+
+
+# -------------------------------
+#   All Files
+# -------------------------------
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# -------------------------------
+
+
+
+
+# -------------------------------
+#   Markdown Files
+# -------------------------------
+
+[*.md]
+trim_trailing_whitespace = false
+
+# -------------------------------
