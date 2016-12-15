@@ -15,8 +15,29 @@
     /* State Configurations
     –––––––––––––––––––––––––––––––––––––––––––––––––– */
     $stateProvider
-      .state('home', {
+      .state('dashboard', {
         url:          '/',
+        templateUrl:  'app/dashboard/dashboard.html',
+        controller:   'DashboardController',
+        controllerAs: 'dash',
+        resolve: {
+          $title: function() {
+            return 'Dashboard';
+          },
+          $bodyClass: function() {
+            return 'dashboard';
+          },
+          driverStandings: function(Ergast) {
+            return Ergast.getDriverStandings({season: '2016'}).$promise.then(function(response) {
+              return response;
+            }, function(errorMsg) {
+              $log.warn('Error:', errorMsg);
+            })
+          }
+        }
+      })
+      .state('home', {
+        url:          '/main',
         templateUrl:  'app/main/main.html',
         controller:   'MainController',
         controllerAs: 'main',

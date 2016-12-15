@@ -5,7 +5,9 @@
     .module('gpquery', [
 
       'gpquery.core',
-      'gpquery.components'
+      'gpquery.components',
+
+      'gpquery.dashboard'
 
     ]);
 
