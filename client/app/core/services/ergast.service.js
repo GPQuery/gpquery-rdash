@@ -57,6 +57,7 @@
 
     actions.getSeasons = {
       method: 'GET',
+      cache:  true,
       params: {
         season: '@season',
         round:  '@round',
@@ -71,6 +72,7 @@
 
     actions.getSchedule = {
       method: 'GET',
+      cache:  true,
       params: {
         season: '@season',
         round:  '@round',
@@ -85,6 +87,7 @@
 
     actions.getResults = {
       method: 'GET',
+      cache:  true,
       params: {
         season: '@season',
         round:  '@round',
@@ -99,6 +102,7 @@
 
     actions.getQualifying = {
       method: 'GET',
+      cache:  true,
       params: {
         season: '@season',
         round:  '@round',
@@ -113,6 +117,7 @@
 
     actions.getDriverStandings = {
       method: 'GET',
+      cache:  true,
       params: {
         season: '@season',
         round:  '@round',
@@ -127,6 +132,7 @@
 
     actions.getConstructorStandings = {
       method: 'GET',
+      cache:  true,
       params: {
         season: '@season',
         round:  '@round',
@@ -141,6 +147,7 @@
 
     actions.getDrivers = {
       method: 'GET',
+      cache:  true,
       params: {
         season: '@season',
         round:  '@round',
@@ -155,6 +162,7 @@
 
     actions.getConstructors = {
       method: 'GET',
+      cache:  true,
       params: {
         season: '@season',
         round:  '@round',
@@ -169,6 +177,7 @@
 
     actions.getCircuits = {
       method: 'GET',
+      cache:  true,
       params: {
         season: '@season',
         round:  '@round',
@@ -183,6 +192,7 @@
 
     actions.getStatus = {
       method: 'GET',
+      cache:  true,
       params: {
         season: '@season',
         round:  '@round',
@@ -197,6 +207,7 @@
 
     actions.getLaps = {
       method: 'GET',
+      cache:  true,
       params: {
         season: '@season',
         round:  '@round',
@@ -211,6 +222,7 @@
 
     actions.getPitstops = {
       method: 'GET',
+      cache:  true,
       params: {
         season: '@season',
         round:  '@round',
