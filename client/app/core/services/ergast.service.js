@@ -52,7 +52,7 @@
     var actions = {};
 
 
-    // Query Seasons
+    //  Query Seasons
     // ------------------------------
 
     actions.getSeasons = {
@@ -62,12 +62,11 @@
         season: '@season',
         round:  '@round',
         query:  'seasons'
-      }//,
-      //url: 'http://ergast.com/api/f1/:season/:round/seasons.json'
+      }
     };
 
 
-    // Query Schedule
+    //  Query Schedule
     // ------------------------------
 
     actions.getSchedule = {
@@ -77,12 +76,11 @@
         season: '@season',
         round:  '@round',
         query:  'schedule'
-      }//,
-      //url: 'http://ergast.com/api/f1/:season/:round/schedule.json'
+      }
     };
 
 
-    // Query Results
+    //  Query Results
     // ------------------------------
 
     actions.getResults = {
@@ -92,12 +90,11 @@
         season: '@season',
         round:  '@round',
         query:  'results'
-      }//,
-      //url: 'http://ergast.com/api/f1/:season/:round/results.json'
+      }
     };
 
 
-    // Query Qualifying
+    //  Query Qualifying
     // ------------------------------
 
     actions.getQualifying = {
@@ -107,12 +104,11 @@
         season: '@season',
         round:  '@round',
         query:  'qualifying'
-      }//,
-      //url: 'http://ergast.com/api/f1/:season/:round/qualifying.json'
+      }
     };
 
 
-    // Query DriverStandings
+    //  Query DriverStandings
     // ------------------------------
 
     actions.getDriverStandings = {
@@ -122,12 +118,11 @@
         season: '@season',
         round:  '@round',
         query:  'driverStandings'
-      }//,
-      //url: 'http://ergast.com/api/f1/:season/:round/driverStandings.json'
+      }
     };
 
 
-    // Query ConstructorStandings
+    //  Query ConstructorStandings
     // ------------------------------
 
     actions.getConstructorStandings = {
@@ -137,12 +132,11 @@
         season: '@season',
         round:  '@round',
         query:  'constructorStandings'
-      }//,
-      //url: 'http://ergast.com/api/f1/:season/:round/constructorStandings.json'
+      }
     };
 
 
-    // Query Drivers
+    //  Query Drivers
     // ------------------------------
 
     actions.getDrivers = {
@@ -152,12 +146,11 @@
         season: '@season',
         round:  '@round',
         query:  'drivers'
-      }//,
-      //url: 'http://ergast.com/api/f1/:season/:round/drivers.json'
+      }
     };
 
 
-    // Query Constructors
+    //  Query Constructors
     // ------------------------------
 
     actions.getConstructors = {
@@ -167,12 +160,11 @@
         season: '@season',
         round:  '@round',
         query:  'constructors'
-      }//,
-      //url: 'http://ergast.com/api/f1/:season/:round/constructors.json'
+      }
     };
 
 
-    // Query Circuits
+    //  Query Circuits
     // ------------------------------
 
     actions.getCircuits = {
@@ -182,12 +174,11 @@
         season: '@season',
         round:  '@round',
         query:  'circuits'
-      }//,
-      //url: 'http://ergast.com/api/f1/:season/:round/circuits.json'
+      }
     };
 
 
-    // Query Status
+    //  Query Status
     // ------------------------------
 
     actions.getStatus = {
@@ -197,12 +188,11 @@
         season: '@season',
         round:  '@round',
         query:  'status'
-      }//,
-      //url: 'http://ergast.com/api/f1/:season/:round/status.json'
+      }
     };
 
 
-    // Query Laps
+    //  Query Laps
     // ------------------------------
 
     actions.getLaps = {
@@ -212,12 +202,11 @@
         season: '@season',
         round:  '@round',
         query:  'laps'
-      }//,
-      //url: 'http://ergast.com/api/f1/:season/:round/laps.json'
+      }
     };
 
 
-    // Query Pitstops
+    //  Query Pitstops
     // ------------------------------
 
     actions.getPitstops = {
@@ -227,8 +216,7 @@
         season: '@season',
         round:  '@round',
         query:  'pitstops'
-      }//,
-      //url: 'http://ergast.com/api/f1/:season/:round/pitstops.json'
+      }
     };
 
     return $resource(url, paramDefaults, actions);
