@@ -36,10 +36,25 @@
         "assets/fonts/bootstrap/glyphicons-halflings-regular.woff2"
       ]
     },
+    "font-awesome": {
+      "main": [
+        "less/font-awesome.less",
+        "scss/font-awesome.scss",
+        "fonts/fontawesome-webfont.eot",
+        "fonts/fontawesome-webfont.svg",
+        "fonts/fontawesome-webfont.ttf",
+        "fonts/fontawesome-webfont.woff",
+        "fonts/fontawesome-webfont.woff2"
+      ]
+    },
     "Ionicons": {
       "main": [
         "less/ionicons.less",
-        "scss/ionicons.scss"
+        "scss/ionicons.scss",
+        "fonts/ionicons.eot",
+        "fonts/ionicons.svg",
+        "fonts/ionicons.ttf",
+        "fonts/ionicons.woff"
       ]
     }
   },
