@@ -1,0 +1,316 @@
+@font-face {
+	font-family: 'racefont';
+	src:url('fonts/racefont.eot?b8iaab');
+	src:url('fonts/racefont.eot?#iefixb8iaab') format('embedded-opentype'),
+		url('fonts/racefont.ttf?b8iaab') format('truetype'),
+		url('fonts/racefont.woff?b8iaab') format('woff'),
+		url('fonts/racefont.svg?b8iaab#racefont') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.rf {
+	font-family: 'racefont';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.rf-admin:before {
+	content: "\e600";
+}
+.rf-admin2:before {
+	content: "\e601";
+}
+.rf-arrow-down:before {
+	content: "\e602";
+}
+.rf-arrow-left:before {
+	content: "\e603";
+}
+.rf-arrow-right:before {
+	content: "\e604";
+}
+.rf-arrow-up:before {
+	content: "\e605";
+}
+.rf-bar-chart:before {
+	content: "\e606";
+}
+.rf-bar-chart-2:before {
+	content: "\e607";
+}
+.rf-calendar:before {
+	content: "\e608";
+}
+.rf-calendar-day:before {
+	content: "\e609";
+}
+.rf-calendar-month:before {
+	content: "\e60a";
+}
+.rf-car:before {
+	content: "\e60b";
+}
+.rf-car-bugy:before {
+	content: "\e60c";
+}
+.rf-car-damage:before {
+	content: "\e60d";
+}
+.rf-car-formula:before {
+	content: "\e60e";
+}
+.rf-car-gt:before {
+	content: "\e60f";
+}
+.rf-car-jeep:before {
+	content: "\e610";
+}
+.rf-chat:before {
+	content: "\e611";
+}
+.rf-chat-full:before {
+	content: "\e612";
+}
+.rf-check:before {
+	content: "\e613";
+}
+.rf-check-circle:before {
+	content: "\e614";
+}
+.rf-check-double:before {
+	content: "\e615";
+}
+.rf-check-double2:before {
+	content: "\e616";
+}
+.rf-chevron-down:before {
+	content: "\e617";
+}
+.rf-chevron-left:before {
+	content: "\e618";
+}
+.rf-chevron-right:before {
+	content: "\e619";
+}
+.rf-chevron-up:before {
+	content: "\e61a";
+}
+.rf-circle:before {
+	content: "\e61b";
+}
+.rf-circle-dash:before {
+	content: "\e61c";
+}
+.rf-clock:before {
+	content: "\e61d";
+}
+.rf-close:before {
+	content: "\e61e";
+}
+.rf-cloud:before {
+	content: "\e61f";
+}
+.rf-cloud-full:before {
+	content: "\e620";
+}
+.rf-cloudy:before {
+	content: "\e621";
+}
+.rf-crew:before {
+	content: "\e622";
+}
+.rf-curve:before {
+	content: "\e623";
+}
+.rf-deny:before {
+	content: "\e624";
+}
+.rf-excel:before {
+	content: "\e625";
+}
+.rf-exclamation:before {
+	content: "\e626";
+}
+.rf-eye:before {
+	content: "\e627";
+}
+.rf-eye-slash:before {
+	content: "\e628";
+}
+.rf-flag:before {
+	content: "\e629";
+}
+.rf-flag-checkered:before {
+	content: "\e62a";
+}
+.rf-flag-full:before {
+	content: "\e62b";
+}
+.rf-floppy:before {
+	content: "\e62c";
+}
+.rf-group:before {
+	content: "\e62d";
+}
+.rf-hashtag:before {
+	content: "\e62e";
+}
+.rf-heartbeat:before {
+	content: "\e62f";
+}
+.rf-heartbeat-2:before {
+	content: "\e630";
+}
+.rf-helmet:before {
+	content: "\e631";
+}
+.rf-history:before {
+	content: "\e632";
+}
+.rf-home:before {
+	content: "\e633";
+}
+.rf-hourglass:before {
+	content: "\e634";
+}
+.rf-info:before {
+	content: "\e635";
+}
+.rf-info-circle:before {
+	content: "\e636";
+}
+.rf-link:before {
+	content: "\e637";
+}
+.rf-list:before {
+	content: "\e638";
+}
+.rf-login:before {
+	content: "\e639";
+}
+.rf-logout:before {
+	content: "\e63a";
+}
+.rf-medal:before {
+	content: "\e63b";
+}
+.rf-medal-full:before {
+	content: "\e63c";
+}
+.rf-online:before {
+	content: "\e63d";
+}
+.rf-oval:before {
+	content: "\e63e";
+}
+.rf-pencil:before {
+	content: "\e63f";
+}
+.rf-person:before {
+	content: "\e640";
+}
+.rf-plus:before {
+	content: "\e641";
+}
+.rf-podium:before {
+	content: "\e642";
+}
+.rf-power:before {
+	content: "\e643";
+}
+.rf-question:before {
+	content: "\e644";
+}
+.rf-rain:before {
+	content: "\e645";
+}
+.rf-redo:before {
+	content: "\e646";
+}
+.rf-refresh:before {
+	content: "\e647";
+}
+.rf-road:before {
+	content: "\e648";
+}
+.rf-save:before {
+	content: "\e649";
+}
+.rf-search:before {
+	content: "\e64a";
+}
+.rf-settings:before {
+	content: "\e64b";
+}
+.rf-snow:before {
+	content: "\e64c";
+}
+.rf-star:before {
+	content: "\e64d";
+}
+.rf-star-full:before {
+	content: "\e64e";
+}
+.rf-steeringweal:before {
+	content: "\e64f";
+}
+.rf-stopwatch:before {
+	content: "\e650";
+}
+.rf-sun:before {
+	content: "\e651";
+}
+.rf-tachometer:before {
+	content: "\e652";
+}
+.rf-team:before {
+	content: "\e653";
+}
+.rf-temperature:before {
+	content: "\e654";
+}
+.rf-tire-mark:before {
+	content: "\e655";
+}
+.rf-tire-mark-2:before {
+	content: "\e656";
+}
+.rf-tools:before {
+	content: "\e657";
+}
+.rf-track:before {
+	content: "\e658";
+}
+.rf-trophy:before {
+	content: "\e659";
+}
+.rf-undo:before {
+	content: "\e65a";
+}
+.rf-unlink:before {
+	content: "\e65b";
+}
+.rf-user:before {
+	content: "\e65c";
+}
+.rf-warning:before {
+	content: "\e65d";
+}
+.rf-wheel:before {
+	content: "\e65e";
+}
+.rf-wheel-2:before {
+	content: "\e65f";
+}
+.rf-wreath:before {
+	content: "\e660";
+}
