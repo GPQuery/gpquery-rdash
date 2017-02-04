@@ -13,10 +13,12 @@
      */
     var mobileView = 992;
 
+    vm.menu = [];
+
     vm.getWidth = getWidth;
     vm.toggleSidebar = toggleSidebar;
 
-    $scope.$watch(vm.getWidth, function(newValue, oldValue) {
+    $scope.$watch(vm.getWidth, function(newValue) {
       if (newValue >= mobileView) {
         if (angular.isDefined($cookies.get('toggle'))) {
           vm.toggle = ! $cookies.get('toggle') ? false : true;
@@ -26,12 +28,18 @@
       } else {
         vm.toggle = false;
       }
-      $rootScope.app.sidebar = vm.toggle;
+      $rootScope.app.sidebar.isOpen = vm.toggle;
     });
 
     $window.onresize = function() {
-        $scope.$apply();
+      $scope.$apply();
     };
+
+    activate();
+
+    function activate() {
+      getMenuItems();
+    }
 
     function getWidth() {
       return $window.innerWidth;
@@ -39,8 +47,19 @@
 
     function toggleSidebar() {
       vm.toggle = !vm.toggle;
-      $rootScope.app.sidebar = vm.toggle;
+      $rootScope.app.sidebar.isOpen = vm.toggle;
       $cookies.put('toggle', vm.toggle);
     }
+
+    function getMenuItems() {
+      vm.menu = $rootScope.app.navigation;
+
+      vm.footerItems = [
+        {name: 'GitHub',  icon: 'fa fa-fw fa-github',       link: 'https://github.com/GPQuery/gpquery-rdash'},
+        {name: 'About',   icon: 'fa fa-fw fa-info-circle',  link: 'https://github.com/GPQuery/gpquery-rdash/blob/develop/README.md'},
+        {name: 'Support', icon: 'fa fa-fw fa-support',      link: 'https://github.com/GPQuery/gpquery-rdash/issues'}
+      ];
+    }
+
   }
 })();

@@ -1,0 +1,301 @@
+$header-dropdown-width:     80px;
+$header-dropdown-height:    60px;
+$header-breakpoint:         560px;
+$header-breakpoint-min:     $header-breakpoint;
+$header-breakpoint-max:     ($header-breakpoint - 1);
+
+.row.header {
+  > div:last-child,
+  > *:last-child {
+    //padding-right: 0;
+  }
+  .form {
+    min-width: $header-dropdown-width;
+    > .item {
+      width: $header-dropdown-width;
+      height: $header-dropdown-height;
+      float: right;
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      > a {
+        color: $rdash-header-item-text-color;
+        display: block;
+        padding: 0px;
+        text-decoration: none;
+        &:hover,
+        &:focus {
+          text-decoration: none;
+          color: $dropdown-link-hover-color;
+          background-color: $dropdown-link-hover-bg;
+        }
+      }
+      i {
+        font-size: 20px;
+        line-height: 55px;
+      }
+      span {
+        //font-size: 20px;
+        line-height: 55px;
+        + span {
+          margin-left: 4px;
+        }
+      }
+      img {
+        width: 40px;
+        height: 40px;
+        margin-top: 10px;
+        border-radius: 2px;
+      }
+      ul.dropdown-menu {
+        border-radius: 2px;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+        min-width: $header-dropdown-width;
+        .dropdown-header {
+          text-align: center;
+        }
+        li.link {
+          text-align: left;
+          a {
+            padding-left: 7px;
+            padding-right: 7px;
+          }
+        }
+        a {
+          color: $rdash-header-item-text-color;
+          display: block;
+        }
+        &:before {
+          position: absolute;
+          top: -7px;
+          right: 23px;
+          display: inline-block;
+          border-right: 7px solid transparent;
+          border-bottom: 7px solid rgba(0, 0, 0, 0.2);
+          border-left: 7px solid transparent;
+          content: '';
+        }
+        &:after {
+          position: absolute;
+          top: -6px;
+          right: 24px;
+          display: inline-block;
+          border-right: 6px solid transparent;
+          border-bottom: 6px solid #ffffff;
+          border-left: 6px solid transparent;
+          content: '';
+        }
+      }
+      &:last-child {
+        margin-right: 70px;
+      }
+    }
+  }
+}
+
+.row {
+  > div {
+    margin-bottom: 15px;
+  }
+}
+
+.meta {
+  .breadcrumb-links {
+    > span {
+      &.active {
+        color: #000000;
+      }
+      a {
+        cursor: pointer;
+        text-decoration: none;
+        &:hover,
+        &:focus
+        &:active {
+          text-decoration: none;
+        }
+      }
+      + span:before {
+        content: "/\00a0";
+        padding-left: 4px;
+        padding-right: 1px;
+        color: #cccccc;
+      }
+    }
+  }
+}
+
+.row.header .content {
+  float: right;
+  > form.item {
+    width: auto;
+  }
+}
+
+gp-header-bar {
+  display: block;
+  padding-right: 0px;
+  .input-mask {
+    padding-top: 7px;
+  }
+}
+
+@media screen and (max-width: $header-breakpoint-max) {
+  gp-header-bar {
+    .content {
+      margin-right: 10px;
+      form.item {
+        padding-right: 10px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: $header-breakpoint-min) {
+  gp-header-bar {
+    .content {
+      margin-right: 30px;
+      form.item {
+        padding-right: 30px;
+      }
+    }
+  }
+}
+
+gp-header-bar {
+  .item {
+    > input {
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid #ccc;
+      border-radius: 0;
+      box-shadow: none;
+      box-sizing: content-box;
+      height: 32px;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      outline: 0;
+      padding: 6px 8px 0px;
+      transition: all ease-out .3s;
+      width: 100%;
+      &:focus {
+        border-bottom: 1px solid $brand-info;
+        box-shadow: 0 1px 0 0 $brand-info;
+      }
+    }
+  }
+}
+
+/*
+Styles from `gp-navbar` directive
+// Undo custom dropdowns
+.navbar .navbar-nav .open .dropdown-menu {
+  position: absolute;
+  float: left;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-width: 0 1px 1px;
+  border-radius: 0 0 4px 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+          box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+  li > a:hover,
+  li > a:focus,
+  .active > a,
+  .active > a:hover,
+  .active > a:focus {
+    color: #fff !important;
+    background-color: #428bca !important;
+  }
+  .disabled > a,
+  .disabled > a:hover,
+  .disabled > a:focus {
+    color: #999 !important;
+    background-color: transparent !important;
+  }
+}
+
+
+// Undo the collapsing navbar
+.navbar-collapse {
+  display: block !important;
+  height: auto !important;
+  padding-bottom: 0;
+  overflow: visible !important;
+  visibility: visible !important;
+}
+
+
+// Undo form expansion
+.navbar-form {
+  float: left;
+  width: auto;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: 0;
+  margin-left: 0;
+  border: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+
+  // Taken from forms.less since we mixin the .form-inline styles
+  .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+
+  .form-control-static {
+    display: inline-block;
+  }
+
+  .input-group {
+    display: inline-table;
+    vertical-align: middle;
+
+    .input-group-addon,
+    .input-group-btn,
+    .form-control {
+      width: auto;
+    }
+
+    > .form-control {
+      width: 100%;
+    }
+  }
+
+  .control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  .radio,
+  .checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+
+    label {
+      padding-left: 0;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      position: relative;
+      margin-left: 0;
+    }
+  }
+
+  .has-feedback .form-control-feedback {
+    top: 0;
+  }
+
+}
+
+*/

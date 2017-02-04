@@ -1,0 +1,43 @@
+div(id="sidebar-wrapper")
+  //- Sidebar Main
+  ul.sidebar
+
+    //- Main Toggle
+    li.sidebar-main
+      a(ng-click='vm.toggleSidebar()')
+        | GPQuery
+        span.menu-icon.glyphicon.glyphicon-transfer
+
+    //- List Item
+    li(
+      ng-repeat="section in ::vm.menu.sections"
+      ng-class="::{'sidebar-list' : section.type == 'link', 'sidebar-title' : section.type == 'title' && section.name, 'separator' : section.type == 'title' && $middle, 'sidebar-toggle' : section.children}"
+    )
+
+      //- Item Link
+      a(
+        ng-if="::(section.type == 'link' && section.mode !== 'disabled')"
+        ng-class="{'active': $state.includes('{{section.link}}')}"
+        ng-href="{{::section.link}}"
+      ) {{::section.name}}
+        span.menu-icon(ng-class="::section.icon")
+
+      //- Item Link Disabled
+      a.disabled(
+        ng-if="::(section.type == 'link' && section.mode == 'disabled')"
+      ) {{::section.name}}
+        span.menu-icon(ng-class="::section.icon")
+
+      //- Item Title
+      span(
+        ng-if="::(section.type == 'title')"
+      ) {{::section.name}}
+
+  //- Sidebar Footer
+  ul.sidebar-footer
+    li(ng-repeat="item in ::vm.footerItems")
+      a(
+        ng-href="{{::item.link}}"
+        target="_blank"
+      ) {{::item.name}}
+        span(ng-class="::item.icon" title="{{::item.name}}")

@@ -1,0 +1,139 @@
+#sidebar-wrapper {
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+              0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+              0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+}
+
+ul.sidebar {
+  .sidebar-list {
+    a {
+      .menu-icon {
+        &,
+        &.icon,
+        &.fa,
+        &.rf {
+          font-size: 16px;
+        }
+        &.rf.rf-car-formula,
+        &.ion {
+          font-size: 17px;
+        }
+        &.ion.ion-podium {
+          font-size: 18px;
+        }
+      }
+
+
+      //  Active (default)
+      // ------------------------------
+
+      &.disabled {
+        background: transparent;
+        border-left: 0 none transparent;
+        color: #999;
+        cursor: $cursor-disabled;
+        text-indent: 25px;
+      }
+      &.active {
+        background: #2d3e63;
+        color: #fff;
+        border-left: 3px solid #e99d1a;
+        text-indent: 22px;
+        .menu-icon {
+          text-indent: 25px;
+        }
+      }
+    }
+  }
+}
+
+
+//  Sidebar (open)
+// ------------------------------
+
+
+#page-wrapper.open {
+  ul.sidebar {
+    .separator {
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+    }
+  }
+}
+
+
+//  Sidebar (collapsed)
+// ------------------------------
+
+#page-wrapper:not(.open) {
+  ul.sidebar {
+    .sidebar-list {
+      a {
+        &.disabled {
+          .menu-icon {
+            border-left: 0 none transparent;
+            text-indent: 25px;
+          }
+        }
+        &.active,
+        &:hover,
+        &:focus {
+          .menu-icon {
+            border-left: 3px solid #e99d1a;
+            text-indent: 22px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Add top margin for `.navbar-fixed-top`
+body {
+  #page-wrapper {
+    //margin-top: 50px;
+  }
+}
+
+
+ul.sidebar-nested-menu {
+  list-style: none;
+  text-indent: 20px;
+  overflow: hidden;
+  transition: 0.75s cubic-bezier(0.35, 0, 0.25, 1);
+  transition-property: height;
+  li {
+    height: 40px;
+    a {
+      color: $rdash-sidebar-text-color;
+      display: block;
+      float: left;
+      text-decoration: none;
+      text-transform: none;
+      width: 250px;
+    }
+  }
+}
+
+.menu-icon.toggle-icon {
+  transform: rotate(180deg);
+  transition: transform 0.3 ease-in-out;
+  &.toggled {
+    transform: rotate(0deg);
+  }
+}
+
+#page-wrapper,
+#page-wrapper.open {
+  ul.sidebar {
+    li.sidebar-list.sidebar-toggle {
+      > a {
+        > span.menu-icon.toggle-icon {
+          font-size: 12px;
+          text-align: center;
+          text-indent: 4px;
+          padding-right: 0px;
+        }
+      }
+    }
+  }
+}

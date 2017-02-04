@@ -1,0 +1,43 @@
+.col-xs-12
+  .content(ng-transclude)
+  //-.meta
+    //- Header Bar title
+    .page(ng-show="races.race")
+      | {{races.race.season}} {{races.race.raceName}}
+    .page(ng-hide="races.race")
+      | GPQuery
+    //- Breadcrumbs
+    .breadcrumb-links
+      span(ng-repeat="crumb in vm.breadcrumbs" ng-class="{'active' : $last}")
+        span(ng-if="!$last"): a(href="{{$state.href(crumb.state, crumb.stateParams)}}") {{ crumb.title }}
+        span(ng-if="$last") {{ crumb.title }}
+  //-.user.pull-right(ng-transclude)
+    .item.dropdown(uib-dropdown)
+      a.dropdown-toggle(href="#", uib-dropdown-toggle)
+        i.fa.fa-user-circle
+      ul.dropdown-menu.dropdown-menu-right
+        li.dropdown-header
+          | Joe Bloggs
+        li.divider
+        li.link
+          a(href="#")
+            | Profile
+        li.link
+          a(href="#")
+            | Menu Item
+        li.link
+          a(href="#")
+            | Menu Item
+        li.divider
+        li.link
+          a(href="#")
+            | Logout
+    //-.item.dropdown(uib-dropdown)
+      a.dropdown-toggle(href="#", uib-dropdown-toggle)
+        i.fa.fa-bell-o
+      ul.dropdown-menu.dropdown-menu-right
+        li.dropdown-header
+          | Notifications
+        li.divider
+        li.link
+          a(href="#") Server Down!
