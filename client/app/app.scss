@@ -1,0 +1,149 @@
+@charset 'UTF-8';
+
+
+
+
+
+
+
+
+/*  Variables, Helpers, and Theming
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/**
+ * These are configuration and helper partials, i.e. global
+ * variables, mixins, functions, and placeholders.
+ *
+ * Theme configuration can be found in the partial
+ * `variables/_theming.scss`.
+ *
+ * None of the code in these files should output any CSS
+ * when compiled.
+ *
+ * Contents of the `_mixins.scss` and `_functions.scss`
+ * partials may be further split into additional files if
+ * necessary later on down the road.
+ *
+ * @see https://sass-guidelin.es/#abstracts-folder
+ */
+
+@import 'core/style/variables/variables';
+
+@import 'core/style/utilities/mixins';
+
+@import 'core/style/utilities/functions';
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+
+
+
+
+
+
+/*  Vendors Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/**
+ * Vendors stylesheets installed with Bower can be found
+ * in their respective directories under `bower_components/`
+ * and are automatically injected by the `wiredep` task.
+ * There is no need to `@import` these stylesheets.
+ *
+ * Manually-installed vendor styles and overrides are found
+ * in the `vendor/` directory.
+ */
+
+@import 'core/style/vendor/vendor';
+
+/**
+ * Do not remove the comments below this comment block.
+ * They are markers used by `wiredep` to inject dependencies
+ * as defined in `bower.json`.
+ */
+
+// bower:scss
+// endbower
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+
+
+
+
+
+
+/*  Base Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/**
+ * This is boilerplate code for the project, including
+ * typographic rules, standard HTML element styles,
+ * resets, animations, and helper classes.
+ *
+ * @see https://sass-guidelin.es/#base-folder
+ */
+
+@import 'core/style/base/base';
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+
+
+
+
+
+
+/*  Layout-Related Sections
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/**
+ * Here are the layout-related stylesheets.
+ *
+ * Styles for individual layout components are found in
+ * their espective directories and injected by
+ * `gulp-inject` automatically in section #6, so there's
+ * no need to `@import` them manually.
+ *
+ * @see https://sass-guidelin.es/#layout-folder
+ */
+
+@import 'core/style/layout/layout';
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+
+
+
+
+
+
+/*  Component & Page-Specific Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/**
+ * Component- and page-specific stylesheets may be found
+ * in their respective directories.  Most of these files
+ * are handled by `gulp-inject`, so there is no need to
+ * manually `@import` them.o
+ *
+ * Some are manually imported and can be found in the
+ * `modules/` directory.
+ */
+
+@import 'core/style/modules/modules';
+
+/**
+ * Do not remove the comments in this section.
+ * They are markers used by `gulp-inject` to inject the Sass
+ * files for Layouts, Components, and Pages automatically.
+ */
+
+// injector
+// endinjector
+
+/* ––––––––––––––––––––––––––––––––––––––––––––––– */

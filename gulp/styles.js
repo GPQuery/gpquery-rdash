@@ -21,14 +21,16 @@ gulp.task('styles', function() {
 });
 
 var buildStyles = function() {
+
   var sassOptions = {
-    style: 'expanded'
+    outputStyle: 'expanded',
+    precision: 10
   };
 
   var injectFiles = gulp.src([
     path.join(conf.paths.src, '/app/**/*.scss'),
     path.join('!' + conf.paths.src, '/app/**/_*.scss'),
-    path.join('!' + conf.paths.src, '/app/index.scss')
+    path.join('!' + conf.paths.src, '/app/app.scss')
   ], { read: false });
 
   var injectOptions = {
@@ -43,7 +45,7 @@ var buildStyles = function() {
 
 
   return gulp.src([
-    path.join(conf.paths.src, '/app/index.scss')
+    path.join(conf.paths.src, '/app/app.scss')
   ])
     .pipe($.inject(injectFiles, injectOptions))
     .pipe(wiredep(_.extend({}, conf.wiredep)))

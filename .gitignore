@@ -32,6 +32,7 @@ npm-debug.log
 *.out
 *.pid
 *.seed
+.deploy/
 .harvest/
 .idea/
 .sass-cache/

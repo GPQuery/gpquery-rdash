@@ -6,26 +6,11 @@
     .factory('Ergast', ErgastFactory);
 
   /**
-   * Angular-Resource data service for Ergast Developer API
+   * `$resource` data service for Ergast Developer API
    *
-   * @usage
-   * ```js
-   * // This retrieves the race results for Round 1 of 2012:
-   * var params = {
-   *   season: '2012',
-   *   round: '1',
-   *   query: 'results'
-   * };
-   * Ergast.get(params).$promise.then(function(response) {
-   *   $log.info(response);
-   * }, function(errorMsg) {
-   *   $log.error(errorMsg);
-   * });
-   * ```
-   *
-   * @see https://docs.angularjs.org/api/ngResource/service/$resource
-   * @see https://docs.angularjs.org/api/ng/service/$http
-   * @see http://ergast.com/mrd/
+   * @link https://docs.angularjs.org/api/ngResource/service/$resource
+   * @link https://docs.angularjs.org/api/ng/service/$http
+   * @link http://ergast.com/mrd/
    */
   /** @ngInject */
   function ErgastFactory($resource) {
@@ -33,7 +18,9 @@
     // Base URL for `$resource` object
     // ------------------------------
 
+    //var url = 'http://ergast.com/api/f1/:season/:round/:query.json';
     var url = 'http://ergast.com/api/f1/:season/:round/:query.json';
+    //drivers/:driver/constructors/:constructor/circuits/:circuit
 
     // Default parameters for `$resource` object
     // ------------------------------
@@ -46,13 +33,26 @@
       //offset: '0'     // Default: 0
     };
 
-    // Custom actions for `$resource` object
+    //  Custom actions for `$resource` object
     // ------------------------------
 
-    var actions = {};
+    var actions = {
+      get: {
+        method: 'GET',
+        cache:  true,
+        params: {
+          season: '@season',
+          round:  '@round',
+          query:  '@query'
+        },
+        transformResponse: function(data) {
+          return angular.fromJson(data).MRData;
+        }
+      }
+    };
 
 
-    //  Query Seasons
+    //  Seasons
     // ------------------------------
 
     actions.getSeasons = {
@@ -62,11 +62,14 @@
         season: '@season',
         round:  '@round',
         query:  'seasons'
+      },
+      transformResponse: function(data) {
+        return angular.fromJson(data).MRData;
       }
     };
 
 
-    //  Query Schedule
+    //  Race Schedule
     // ------------------------------
 
     actions.getSchedule = {
@@ -75,12 +78,15 @@
       params: {
         season: '@season',
         round:  '@round',
-        query:  'schedule'
+        query:  'races'
+      },
+      transformResponse: function(data) {
+        return angular.fromJson(data).MRData;
       }
     };
 
 
-    //  Query Results
+    //  Race Results
     // ------------------------------
 
     actions.getResults = {
@@ -90,11 +96,14 @@
         season: '@season',
         round:  '@round',
         query:  'results'
+      },
+      transformResponse: function(data) {
+        return angular.fromJson(data).MRData;
       }
     };
 
 
-    //  Query Qualifying
+    //  Qualifying Results
     // ------------------------------
 
     actions.getQualifying = {
@@ -104,11 +113,14 @@
         season: '@season',
         round:  '@round',
         query:  'qualifying'
+      },
+      transformResponse: function(data) {
+        return angular.fromJson(data).MRData;
       }
     };
 
 
-    //  Query DriverStandings
+    //  Driver Standings
     // ------------------------------
 
     actions.getDriverStandings = {
@@ -118,11 +130,15 @@
         season: '@season',
         round:  '@round',
         query:  'driverStandings'
+      },
+      transformResponse: function(data) {
+        return angular.fromJson(data).MRData;
       }
+
     };
 
 
-    //  Query ConstructorStandings
+    //  Constructor Standings
     // ------------------------------
 
     actions.getConstructorStandings = {
@@ -132,11 +148,14 @@
         season: '@season',
         round:  '@round',
         query:  'constructorStandings'
+      },
+      transformResponse: function(data) {
+        return angular.fromJson(data).MRData;
       }
     };
 
 
-    //  Query Drivers
+    //  Driver Information
     // ------------------------------
 
     actions.getDrivers = {
@@ -144,13 +163,15 @@
       cache:  true,
       params: {
         season: '@season',
-        round:  '@round',
         query:  'drivers'
+      },
+      transformResponse: function(data) {
+        return angular.fromJson(data).MRData;
       }
     };
 
 
-    //  Query Constructors
+    //  Constructor Information
     // ------------------------------
 
     actions.getConstructors = {
@@ -158,13 +179,15 @@
       cache:  true,
       params: {
         season: '@season',
-        round:  '@round',
         query:  'constructors'
+      },
+      transformResponse: function(data) {
+        return angular.fromJson(data).MRData;
       }
     };
 
 
-    //  Query Circuits
+    //  Circuit Information
     // ------------------------------
 
     actions.getCircuits = {
@@ -174,11 +197,14 @@
         season: '@season',
         round:  '@round',
         query:  'circuits'
+      },
+      transformResponse: function(data) {
+        return angular.fromJson(data).MRData;
       }
     };
 
 
-    //  Query Status
+    //  Finishing Status
     // ------------------------------
 
     actions.getStatus = {
@@ -188,11 +214,14 @@
         season: '@season',
         round:  '@round',
         query:  'status'
+      },
+      transformResponse: function(data) {
+        return angular.fromJson(data).MRData;
       }
     };
 
 
-    //  Query Laps
+    //  Lap Times
     // ------------------------------
 
     actions.getLaps = {
@@ -202,11 +231,14 @@
         season: '@season',
         round:  '@round',
         query:  'laps'
+      },
+      transformResponse: function(data) {
+        return angular.fromJson(data).MRData;
       }
     };
 
 
-    //  Query Pitstops
+    //  Pit Stops
     // ------------------------------
 
     actions.getPitstops = {
@@ -216,6 +248,25 @@
         season: '@season',
         round:  '@round',
         query:  'pitstops'
+      },
+      transformResponse: function(data) {
+        return angular.fromJson(data).MRData;
+      }
+    };
+
+
+    //  Races by Season
+    // ------------------------------
+
+    actions.getRaces = {
+      method: 'GET',
+      cache:  true,
+      params: {
+        season: '@season',
+        query:  'races'
+      },
+      transformResponse: function(data) {
+        return angular.fromJson(data).MRData;
       }
     };
 

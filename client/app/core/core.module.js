@@ -20,9 +20,11 @@
       //  3rd Party Modules
       // ------------------------------
 
+      'angular-loading-bar',
       'ui.router',
       'ui.bootstrap',
       'toastr'
 
   ]);
+
 })();

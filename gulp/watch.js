@@ -12,7 +12,10 @@ function isOnlyChange(event) {
 
 gulp.task('watch', ['markups', 'inject', 'other'], function () {
 
-  gulp.watch([path.join(conf.paths.src, '/*.html'), 'bower.json'], ['inject-reload']);
+  gulp.watch([
+    path.join(conf.paths.src, '/*.html'),
+    'bower.json'
+  ], ['inject-reload']);
 
   gulp.watch([
     path.join(conf.paths.src, '/app/**/*.css'),

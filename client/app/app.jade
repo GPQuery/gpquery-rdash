@@ -1,0 +1,41 @@
+//-#page-wrapper(ng-class="{'open': app.sidebar.isOpen}" ng-cloak)
+gp-sidebar
+#content-wrapper
+  .page-content
+    gp-header-bar(
+      page-title="GPQuery"
+      breadcrumbs="breadcrumbs"
+    )
+      .item.dropdown(uib-dropdown)
+        a.dropdown-toggle(href="#", uib-dropdown-toggle)
+          i.fa.fa-user-circle
+        ul.dropdown-menu.dropdown-menu-right
+          li.dropdown-header
+            | Joe Bloggs
+          li.divider
+          li.link
+            a(href="#")
+              | Profile
+          li.link
+            a(href="#")
+              | Menu Item
+          li.link
+            a(href="#")
+              | Menu Item
+          li.divider
+          li.link
+            a(href="#")
+              | Logout
+      //-.item.dropdown(uib-dropdown)
+        a.dropdown-toggle(href="#", uib-dropdown-toggle)
+          i.fa.fa-bell-o
+        ul.dropdown-menu.dropdown-menu-right
+          li.dropdown-header
+            | Notifications
+          li.divider
+          li.link
+            a(href="#") Server Down!
+      form.item
+        input.form-control(placeholder="Search...", type="text")
+
+    .site-ui-view(ui-view)
