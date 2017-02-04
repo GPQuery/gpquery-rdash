@@ -1,0 +1,215 @@
+///
+// GPQuery-Livery Colurs
+// v0.6.0
+//
+// Copyright © 2015
+//
+// @author    Jonathan Ho <joho@joho.io>
+// @created   12-Aug-2015
+// @modified  14-Aug-2015
+//
+// @package GPQuery-Livery
+// @description
+// Sass colour variables for GPQuery suite.
+///
+
+
+
+
+/*  F1 Colours
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+// Constructor Stripes, 2014 - 2015
+// ------------------------------
+
+$gpq-stripe-mer                 : rgba(  42, 180, 164, 1.00 );    // #2ab4a5 - mercedes
+$gpq-stripe-rbr                 : rgba(  79,  26, 171, 1.00 );    // #4f1aab - red bull racing
+$gpq-stripe-mcl                 : rgba( 128, 128, 128, 1.00 );    // #808080 - mclaren
+$gpq-stripe-wil                 : rgba( 255, 255, 255, 1.00 );    // #ffffff - williams
+$gpq-stripe-sfi                 : rgba( 255,  95,  15, 1.00 );    // #ff5f0f - sahara force india
+$gpq-stripe-fer                 : rgba( 195,   0,   0, 1.00 );    // #c30000 - ferrari
+$gpq-stripe-str                 : rgba(   0,   5, 193, 1.00 );    // #0005c1 - scuderia toro rosso
+$gpq-stripe-lot                 : rgba( 255, 184,   0, 1.00 );    // #ffb800 - lotus
+$gpq-stripe-sau                 : rgba(   0,  99, 255, 1.00 );    // #0063ff - sauber
+$gpq-stripe-mar                 : rgba( 110,   0,   0, 1.00 );    // #6e0000 - marussia
+$gpq-stripe-cat                 : rgba(   0, 108,   0, 1.00 );    // #006c00 - caterham
+
+
+//  Driver Colours, 2015
+//  ------------------------------
+
+$gpq-driver-ric                 : rgba(  79,  26, 171, 1.00 );    // #4f1aab // Ricciardo
+$gpq-driver-kvy                 : rgba(  64,  21, 138, 1.00 );    // #40158a // Kvyat
+$gpq-driver-ham                 : rgba(  42, 180, 165, 1.00 );    // #2ab4a5 // Hamilton
+$gpq-driver-ros                 : rgba(  34, 145, 132, 1.00 );    // #229184 // Rosberg
+$gpq-driver-vet                 : rgba( 195,   0,   0, 1.00 );    // #c30000 // Vettel
+$gpq-driver-rai                 : rgba( 155,   0,   0, 1.00 );    // #9b0000 // Raikkonen
+$gpq-driver-gro                 : rgba( 255, 184,   0, 1.00 );    // #ffb800 // Grosjean
+$gpq-driver-pal                 : rgba( 255, 184,   0, 1.00 );    // #ffb800 // Palmer
+$gpq-driver-mal                 : rgba( 204, 146,   0, 1.00 );    // #cc9200 // Maldonado
+$gpq-driver-sai                 : rgba(   0,   5, 193, 1.00 );    // #0005c1 // Sainz
+$gpq-driver-ves                 : rgba(   0,   5, 155, 1.00 );    // #00059b // Verstappen
+$gpq-driver-but                 : rgba( 128, 128, 128, 1.00 );    // #808080 // Button
+$gpq-driver-alo                 : rgba( 102, 102, 102, 1.00 );    // #666 // Alonso
+$gpq-driver-mag                 : rgba( 102, 102, 102, 1.00 );    // #666 // Magnussen
+$gpq-driver-mar                 : rgba(   0,  99, 255, 1.00 );    // #0063ff // Mar
+$gpq-driver-nas                 : rgba(   0,  99, 255, 1.00 );    // #0063ff // Nasr
+$gpq-driver-eri                 : rgba(   0,  78, 204, 1.00 );    // #004ecc // Ericsson
+$gpq-driver-hul                 : rgba( 255,  95,  15, 1.00 );    // #ff5f0f // Hulkenberg
+$gpq-driver-per                 : rgba( 216,  72,   0, 1.00 );    // #d84800 // Perez
+$gpq-driver-ste                 : rgba( 110,   0,   0, 1.00 );    // #6e0000 // Stevens
+$gpq-driver-mer                 : rgba(  88,   0,   0, 1.00 );    // #580000 // Merhi
+$gpq-driver-mas                 : rgba( 255, 255, 255, 1.00 );    // #fff // Massa
+$gpq-driver-bot                 : rgba( 204, 204, 204, 1.00 );    // #ccc // Bottas
+$gpq-driver-wol                 : rgba( 204, 204, 204, 1.00 );    // #ccc // Wolff
+$gpq-driver-def                 : rgba( 255, 255, 255, 1.00 );    // #fff // Default
+
+
+//  Live Timing Colours
+// ------------------------------
+
+$gpq-live-timing-green          : #00ff03;
+$gpq-live-timing-purple         : #ff00fc;
+$gpq-live-timing-blue           : #0000ff;
+$gpq-live-timing-yellow         : #ffff00;
+$gpq-live-timing-red            : #ff0000;
+
+
+
+
+/*  Racing Colours
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+
+//  Int'l Motor Racing Colours
+// ------------------------------
+
+$gpq-ita-red                    : rgba( 204,   0,   0, 1.00 );     // #cc0000 - rosso corsa
+$gpq-jap-red                    : rgba( 199,   0,  37, 1.00 );     // #c70025 - japan red
+$gpq-fra-blue                   : rgba(  49, 140, 231, 1.00 );     // #318ce7 - bleu de france
+$gpq-fin-blue                   : rgba(   0,  47, 108, 1.00 );     // #002f6c - finnish flag blue
+$gpq-gbr-green                  : rgba(   1,  66,  37, 1.00 );     // #014225 - british racing green
+$gpq-deu-silver                 : rgba( 192, 192, 192, 1.00 );     // #c0c0c0 - silver arrows
+$gpq-usa-red                    : rgba( 178,  34,  52, 1.00 );     // #b22234 - old glory red
+$gpq-usa-blue                   : rgba(  60,  59, 110, 1.00 );     // #3c306e - old glory blue
+$gpq-mcl-orange                 : rgba( 255, 123,   8, 1.00 );     // #ff7b08 - mclaren orange
+$gpq-jag-purple                 : rgba( 108,  15, 118, 1.00 );     // #6c0f76 - silk cut jaguar purple
+
+
+
+
+/*  Constructor Colours
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+$gpq-wil-blue-dark:           #002D59;
+$gpq-wil-blue-light:          #6DC9F2;
+$gpq-wil-red:                 #E4032C;
+
+$gpq-rbr-orange:              #F7BC60;
+$gpq-rbr-yellow:              #FFD400;
+$gpq-rbr-red:                 #ED1847;
+$gpq-rbr-blue:                #001E49;
+
+$gpq-mcl-red:                 #e90000;  /*#ef1c21; //#ED1C24*/
+$gpq-mcl-gray-dark:           #111111;
+$gpq-mcl-gray-light:          #333333;
+
+$gpq-fer-red:                 #ed1f24;
+
+$gpq-sau-red:                 #D0180D;
+$gpq-sau-blue:                #204987;  //#223a7a;
+$gpq-sau-yellow:              #f8d117;
+
+$gpq-ren-yellow:              #ffcc33;
+
+$gpq-sfi-orange:              #DE632F;
+$gpq-sfi-green:               #209D4A;
+$gpq-sfi-red:                 #B30E40;
+$gpq-sfi-grey:                #5D5E62;
+
+
+
+
+/* Colour Palettes
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* CSS - Cascading Style Sheet */
+/* Palette color codes */
+/* Palette URL: http://paletton.com/#uid=33f0u0koyC9epP9jUIbubywwZpP */
+
+/* Feel free to copy&paste color codes to your application */
+
+
+/* As hex codes */
+
+// blue
+// green
+// teal
+// orange
+// red
+
+
+
+$palette-mer-primary:         #3A68BD;
+$palette-mer-success:         #4BDD34;
+$palette-mer-info:            #2AB4A5;
+$palette-mer-warning:         #FF8F3B;
+$palette-mer-danger:          #FA3A48;
+
+$palette-wil-primary:         #002D59;
+$palette-wil-success:         #005C3C;
+$palette-wil-info:            #6DC9F2;
+$palette-wil-warning:         #896900;
+$palette-wil-danger:          #E4032C;
+
+$palette-rbr-primary:         #4F1AAB;
+$palette-rbr-success:         #5DE017;
+$palette-rbr-info:            #001e49;
+$palette-rbr-warning:         #F7BC60;
+$palette-rbr-danger:          #ED1847;
+
+
+//  Bootstrap 4
+// ------------------------------
+
+$bs4-white:                     #ffffff !default;
+$bs4-black:                     #000000 !default;
+$bs4-red:                       #d9534f !default;
+$bs4-orange:                    #f0ad4e !default;
+$bs4-yellow:                    #ffd500 !default;
+$bs4-green:                     #5cb85c !default;
+$bs4-blue:                      #0275d8 !default;
+$bs4-teal:                      #5bc0de !default;
+$bs4-pink:                      #ff5b77 !default;
+$bs4-purple:                    #613d7c !default;
+
+$bs4-gray-dark:                 #292b2c !default;
+$bs4-gray:                      #464a4c !default;
+$bs4-gray-light:                #636c72 !default;
+$bs4-gray-lighter:              #eceeef !default;
+$bs4-gray-lightest:             #f7f7f9 !default;
+
+$bs4-brand-primary:             #0275d8 !default;
+$bs4-brand-success:             #5cb85c !default;
+$bs4-brand-info:                #5bc0de !default;
+$bs4-brand-warning:             #f0ad4e !default;
+$bs4-brand-danger:              #d9534f !default;
+$bs4-brand-inverse:             #292b2c !default;
+
+
+//  Bootstrap 3
+// ------------------------------
+
+$bs3-gray-base:                 #000000;
+$bs3-gray-darker:               #222222;
+$bs3-gray-dark:                 #333333;
+$bs3-gray:                      #555555;
+$bs3-gray-light:                #777777;
+$bs3-gray-lighter:              #eeeeee;
+
+$bs3-brand-primary:             #337ab7;
+$bs3-brand-success:             #5cb85c;
+$bs3-brand-info:                #5bc0de;
+$bs3-brand-warning:             #f0ad4e;
+$bs3-brand-danger:              #d9534f;

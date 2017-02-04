@@ -1,0 +1,112 @@
+/**
+ * Angular Loading Bar
+ *
+ * @description Override angular-loading-bar styles
+ * @link https://github.com/chieffancypants/angular-loading-bar/
+ */
+
+$spinner-duration-base:       1500ms;
+$spinner-duration-center:     $spinner-duration-base * 1.5;
+$spinner-duration-inner:      $spinner-duration-center / 2;
+
+$spinner-position-top:        37.5%;
+$spinner-size-base:           180px;
+$spinner-margin-base:         (0 - $spinner-size-base / 2);
+$spinner-position-center:     ($spinner-size-base / 30);
+$spinner-position-inner:      ($spinner-size-base / 10);
+
+$spinner-ring-outer-color:    lighten(saturate($brand-danger, 25%), 12.5%);
+$spinner-ring-center-color:   lighten(saturate($brand-primary, 50%), 25%);
+$spinner-ring-inner-color:    lighten(saturate($brand-warning, 75%), 37.5%);
+
+$spinner-ring-width:          3px;
+
+
+
+
+/*  Multiple Spinners
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+/* Make clicks pass-through */
+#loading-bar,
+#loading-bar-spinner {
+  transition: $material-toggle;
+
+  &.ng-enter,
+  &.ng-leave.ng-leave-active {
+    opacity: 0;
+  }
+
+  &.ng-enter.ng-enter-active,
+  &.ng-leave {
+    opacity: 1;
+  }
+}
+
+#loading-bar-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background-color: #000;
+  backface-visibility: hidden;
+
+  & > .spinner-icon {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: $spinner-position-top;
+    width: $spinner-size-base;  //150px;
+    height: $spinner-size-base; //150px;
+    margin: $spinner-margin-base 0 0 $spinner-margin-base;  //-75px 0 0 -75px;
+    border-radius: 50%;
+    border: $spinner-ring-width solid transparent;
+    border-top-color: $spinner-ring-outer-color;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    //animation: spinner 1500ms $swift-ease-in-timing-function infinite;
+    animation: spinner $spinner-duration-base $material-toggle-timing-function infinite;
+
+    &:before,
+    &:after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      border: $spinner-ring-width solid transparent;
+    }
+
+    &:before {
+      top: $spinner-position-center; //5px;
+      left: $spinner-position-center;  //5px;
+      right: $spinner-position-center; //5px;
+      bottom: $spinner-position-center;  //5px;
+      border-top-color: $spinner-ring-center-color;
+      //animation: spinner 2250ms $swift-ease-in-timing-function infinite;
+      animation: spinner $spinner-duration-center $material-toggle-timing-function infinite;
+    }
+
+    &:after {
+      top: $spinner-position-inner;  //15px;
+      left: $spinner-position-inner; //15px;
+      right: $spinner-position-inner;  //15px;
+      bottom: $spinner-position-inner; //15px;
+      border-top-color: $spinner-ring-inner-color;
+      //animation: spinner 1125ms $swift-ease-in-timing-function infinite;
+      animation: spinner $spinner-duration-inner $material-toggle-timing-function infinite;
+    }
+  }
+}
+
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,40 @@
+/**
+ * Main
+ *
+ * @description Main content containers styles & transitions
+ */
+
+.site-ui-view {
+
+  &.ng-enter,
+  &.ng-leave.ng-leave-active {
+    opacity: 0;
+  }
+
+  &.ng-enter.ng-enter-active,
+  &.ng-leave {
+    opacity: 1;
+  }
+
+  // .ng-enter
+  // added at the very start of the transition
+  // to enter/display a view
+  &.ng-enter {
+    transition: all ($swift-ease-out-duration * 2) $swift-ease-out-timing-function;
+  }
+
+  // .ng-enter-active
+  // also added at the start of the transition,
+  // immediately after adding .ng-enter
+
+  // .ng-leave
+  // added at the very start of the transition
+  // to leave/hide a view
+  &.ng-leave {
+    transition: all ($swift-ease-in-duration * 2) $swift-ease-in-timing-function;
+  }
+
+  // .ng-leave-active
+  // also added at the start of the transition,
+  // immediately after adding .ng-leave
+}

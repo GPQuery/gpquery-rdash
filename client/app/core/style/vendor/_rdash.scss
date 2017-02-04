@@ -1,0 +1,787 @@
+////
+/// RDash Styles
+///
+/// Original Work Copyright (c) 2014 rdash The MIT License (MIT)
+/// Modified Work Copyright (c) 2016 Jonathan Ho <joho@joho.io> (http://joho.io)
+////
+
+/**
+ * Modified RDash Vendor Stylesheet
+ *
+ * @author Jonathan Ho <joho@joho.io> (http://joho.io)
+ * @copyright rdash 2014
+ * @copyright Jonathan Ho 2017
+ * @license MIT
+ * @namespace gpquery.core.vendor
+ * @requires twbs/bootstrap-sass v3.3.7
+ *
+ * @description
+ * Refactored RDash-UI Stylesheet for use in GPQuery
+ *
+ * Contents
+ *    Abstracts
+ *    Variables
+ *    Functions & Mixins
+ *    Page & Content Wrappers
+ *    Responsive Styles
+ */
+
+
+
+
+
+
+
+
+/*  Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+$rdash-green:                       #23ae89 !default;
+$rdash-blue:                        #2361ae !default;
+$rdash-orange:                      #d3a938 !default;
+$rdash-red:                         #ae2323 !default;
+
+$rdash-green:                       $brand-success; //#23ae89 !default;
+$rdash-blue:                        $brand-primary; //#2361ae !default;
+$rdash-orange:                      $brand-warning; //#d3a938 !default;
+$rdash-red:                         $brand-danger;  //#ae2323 !default;
+
+$sidebar-base-color:                #30426a;
+$sidebar-header-color:              darken($sidebar-base-color, 2%);
+$sidebar-title-color:               lighten($sidebar-base-color, 30%);
+
+//$rdash-sidebar-bg:                  #002D59;  // !default;
+//$rdash-sidebar-footer-bg:           #00284f;  // #2d3e63 !default;
+//$rdash-sidebar-title-color:         #007bf2;  // #738bc0 !default;
+//$rdash-sidebar-list-color:          #b2bfdc !default;
+//$rdash-sidebar-list-border-active:  #815600;  // #e99d1a !default;
+//$rdash-sidebar-list-active-color:   #ffffff !default;
+//$rdash-sidebar-text-color:          #ffffff !default;
+//$rdash-header-item-text-color:      #919191 !default;
+
+$rdash-sidebar-bg:                  #30426a !default;
+$rdash-sidebar-footer-bg:           #2d3e63 !default;
+$rdash-sidebar-footer-active-color: #002D59 !default;
+$rdash-sidebar-title-color:         #738bc0 !default;
+$rdash-sidebar-list-color:          #b2bfdc !default;
+$rdash-sidebar-list-border-active:  #e99d1a !default;
+$rdash-sidebar-list-active-color:   #ffffff !default;
+$rdash-sidebar-text-color:          #ffffff !default;
+$rdash-header-item-text-color:      #919191 !default;
+
+//$rdash-bg-color:                    #f3f3f3 !default;
+//$rdash-text-color:                  #333333 !default;
+
+$rdash-header-bg:                   #f6f6f6;  //#ffffff !default;
+
+$rdash-widget-bg:                   #ffffff !default;
+$rdash-widget-border-color:         #e9e9e9 !default;
+$rdash-widget-header-bg:            #f6f6f6 !default;
+$rdash-widget-header-text-color:    #767676 !default;
+$rdash-widget-icon-color:           #ffffff !default;
+$rdash-widget-table-bg:             #fafafa !default;
+$rdash-loader-bg:                   #333333 !default;
+$rdash-widget-text-error-color:     #ff0000 !default;
+
+$rdash-breakpoint:                  560px;
+$rdash-breakpoint-min:              $rdash-breakpoint;
+$rdash-breakpoint-max:              ($rdash-breakpoint - 1) !default;
+
+/*  End Variables –––––––––––––––––––––––––––––––– */
+
+
+
+
+
+
+
+
+/*  Main
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+html {
+  overflow-y: scroll;
+}
+body {
+  //color: #333333 !important;
+}
+.row {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  > div {
+    margin-bottom: 15px;
+  }
+}
+
+.alerts-container .alert:last-child {
+  margin-bottom: 0;
+}
+
+#page-wrapper {
+  padding-left: 70px;
+  height: 100%;
+}
+
+#sidebar-wrapper {
+  background: $rdash-sidebar-bg;
+  margin-left: -150px;
+  left: -30px;
+  width: 250px;
+  position: fixed;
+  height: 100%;
+  z-index: 999;
+}
+
+#page-wrapper,
+#sidebar-wrapper {
+  transition: all .4s ease 0s;
+}
+
+.green {
+  background: $rdash-green !important;
+}
+
+.blue {
+  background: $rdash-blue !important;
+}
+
+.orange {
+  background: $rdash-orange !important;
+}
+
+.red {
+  background: $rdash-red !important;
+}
+
+.form-group .help-block.form-group-inline-message {
+  padding-top: 5px;
+}
+
+div.input-mask {
+  padding-top: 7px;
+}
+
+/*  End Main ––––––––––––––––––––––––––––––––––––– */
+
+
+
+
+
+
+
+
+/*  Loading
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.loading {
+  width: 40px;
+  height: 40px;
+  position: relative;
+  margin: 100px auto;
+}
+
+.double-bounce1,
+.double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: $rdash-loader-bg;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: bounce 2s infinite ease-in-out;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+
+@-webkit-keyframes bounce {
+  0%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+
+/*  End Loading –––––––––––––––––––––––––––––––––– */
+
+
+
+
+
+
+
+
+/*  Hamburg
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media only screen and (max-width: $rdash-breakpoint-min) {
+  body.hamburg {
+    #page-wrapper {
+      padding-left: 0;
+      &:not(.open) {
+        #sidebar-wrapper {
+          position: fixed;
+          left: -100px;
+          ul.sidebar {
+            overflow-y: hidden;
+          }
+        }
+        ul.sidebar {
+          .sidebar-title.separator {
+            display: none;
+          }
+        }
+
+      }
+      &.open {
+        #sidebar-wrapper {
+          position: fixed;
+          ul.sidebar li.sidebar-main {
+            margin-left: 0px;
+          }
+        }
+      }
+    }
+    #sidebar-wrapper ul.sidebar li.sidebar-main,
+    .row.header .meta {
+      margin-left: 70px;
+    }
+    #sidebar-wrapper ul.sidebar li.sidebar-main,
+    #page-wrapper.open #sidebar-wrapper ul.sidebar li.sidebar-main {
+      transition: margin-left 0.4s ease 0s;
+    }
+  }
+}
+
+/*  End Hamburg –––––––––––––––––––––––––––––––––– */
+
+
+
+
+
+
+
+
+/*  Content
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+#content-wrapper {
+  padding-left: 0;
+  margin-left: 0;
+  width: 100%;
+  height: auto;
+}
+
+@media only screen and (min-width: $rdash-breakpoint-max) {
+  #page-wrapper.open {
+    padding-left: 250px;
+  }
+}
+
+@media only screen and (max-width: $rdash-breakpoint-min) {
+  #page-wrapper.open {
+    padding-left: 70px;
+  }
+}
+
+#page-wrapper.open #sidebar-wrapper {
+  left: 150px;
+}
+
+/*  End Content –––––––––––––––––––––––––––––––––– */
+
+
+
+
+
+
+
+
+/*  Header
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.row.header {
+  height: 60px;
+  background: $rdash-header-bg;
+  margin-bottom: 15px;
+  > div:last-child {
+    //padding-right: 0;
+  }
+  .meta {
+    .page {
+      font-size: 17px;
+      padding-top: 11px;
+    }
+    .breadcrumb-links {
+      font-size: 10px;
+    }
+    div {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .login a {
+    padding: 18px;
+    display: block;
+  }
+  .user,
+  .content {
+    min-width: 130px;
+    > .item {
+      width: 65px;
+      height: 60px;
+      float: right;
+      display: inline-block;
+      text-align: center;
+      vertical-align: middle;
+      > a {
+        color: $rdash-header-item-text-color;
+        display: block;
+        padding: 0;
+        text-decoration: none;
+      }
+      i {
+        font-size: 20px;
+        line-height: 55px;
+      }
+      img {
+        width: 40px;
+        height: 40px;
+        margin-top: 10px;
+        border-radius: 2px;
+      }
+      ul.dropdown-menu {
+        border-radius: 2px;
+        -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
+        .dropdown-header {
+          text-align: center;
+        }
+        li.link {
+          text-align: left;
+          a {
+            padding-left: 7px;
+            padding-right: 7px;
+          }
+        }
+        &:before {
+          position: absolute;
+          top: -7px;
+          right: 23px;
+          display: inline-block;
+          border-right: 7px solid transparent;
+          border-bottom: 7px solid rgba(0, 0, 0, 0.2);
+          border-left: 7px solid transparent;
+          content: '';
+        }
+        &:after {
+          position: absolute;
+          top: -6px;
+          right: 24px;
+          display: inline-block;
+          border-right: 6px solid transparent;
+          border-bottom: 6px solid #ffffff;
+          border-left: 6px solid transparent;
+          content: '';
+        }
+      }
+    }
+  }
+}
+
+/*  End Header ––––––––––––––––––––––––––––––––––– */
+
+
+
+
+
+
+
+
+/*  Sidebar
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+ul.sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 45px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-indent: 20px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  li {
+    a {
+      color: $rdash-sidebar-text-color;
+      display: block;
+      float: left;
+      text-decoration: none;
+      width: 250px;
+    }
+  }
+
+
+  //  Sidebar List Toggle
+  // ------------------------------
+
+  .sidebar-main {
+    height: 65px;
+    a {
+      background: $rdash-sidebar-footer-bg;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 60px;
+    }
+    .menu-icon {
+      float: right;
+      font-size: 18px;
+      padding-right: 28px;
+      line-height: 60px;
+    }
+  }
+
+
+  //  Sidebar List Title
+  // ------------------------------
+
+  .sidebar-title {
+    color: $rdash-sidebar-title-color;
+    font-size: 12px;
+    height: 35px;
+    line-height: 40px;
+    text-transform: uppercase;
+    transition: all 0.4s ease 0s;
+    span {
+      //color: $rdash-sidebar-title-color;
+      //display: block;
+      //float: left;
+      //font-size: 12px;
+      //line-height: 40px;
+      //text-transform: uppercase;
+      //text-decoration: none;
+      //width: 250px;
+    }
+  }
+
+
+  //  Sidebar List Item
+  // ------------------------------
+
+  .sidebar-list {
+    height: 40px;
+    a {
+      cursor: pointer;
+      color: $rdash-sidebar-list-color;
+      font-size: 15px;
+      line-height: 40px;
+      text-indent: 25px;
+      &:hover,
+      &:focus,
+      &:active {
+        background: $rdash-sidebar-footer-bg;
+        color: $rdash-sidebar-list-active-color;
+        border-left: 3px solid $rdash-sidebar-list-border-active;
+        text-indent: 22px;
+        .menu-icon {
+          text-indent: 25px;
+        }
+      }
+    }
+    a.disabled {
+      &:hover,
+      &:focus,
+      &:active {
+        background: transparent;
+        border-left: 0 none transparent;
+        color: #999;
+        text-indent: 25px;
+        .menu-icon {
+          text-indent: 25px;
+        }
+      }
+    }
+    .menu-icon {
+      float: right;
+      padding-right: 29px;
+      line-height: 40px;
+      width: 70px;
+    }
+  }
+}
+
+
+
+//  Sidebar (collapsed)
+// ------------------------------
+
+#page-wrapper:not(.open) {
+  ul.sidebar {
+    bottom: 0;
+    .sidebar-title {
+      display: none;
+      height: 0px;
+      text-indent: -100px;
+      &.separator {
+        background: $rdash-sidebar-footer-bg;
+        //display: block;
+        height: 2px;
+        margin: 6px 0;  //13px 0;
+      }
+    }
+  }
+}
+
+
+//  Sidebar Footer (collapsed)
+// ------------------------------
+
+#page-wrapper:not(.open) {
+
+  ul.sidebar-footer {
+    text-align: 20px;
+    overflow: hidden;
+    > li {
+      height: 40px;
+      line-height: 40px;
+      text-align: left;
+      text-indent: -100px;
+      width: auto;
+      > a {
+        background-color: $rdash-sidebar-footer-bg;
+        display: block;
+        float: left;
+        line-height: 40px;
+        text-align: left;
+        text-indent: 25px;
+        padding: 0;
+        width: 250px;
+        span {
+          display: inline;
+          font-size: 16px;
+          float: right;
+          padding-right: 29px;
+          line-height: 40px;
+          text-align: center;
+          text-indent: 25px;
+          width: 70px;
+        }
+        &:hover,
+        &:focus,
+        &:active {
+          background-color: darken($rdash-sidebar-footer-bg, 3.5%);
+          color: $rdash-sidebar-list-active-color;
+          border-top: 0px none transparent;
+          border-left: 3px solid $rdash-sidebar-list-border-active;
+          text-indent: 22px;
+          span {
+            border-left: 3px solid #e99d1a;
+            text-indent: 22px;
+          }
+        }
+      }
+    }
+    //display: none;
+  }
+}
+
+
+//  Sidebar Footer
+// ------------------------------
+
+ul.sidebar-footer {
+  border-top: 1px solid rgba(3.5, 3.5, 3.5, 0.12);
+  bottom: 0;
+  left: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  position: absolute;
+  list-style: none;
+  right: 0;
+  @include clearfix;
+
+  > li {
+    display: block;
+    float: left;
+    position: relative;
+    text-align: center;
+    transition: all 0.4s ease 0s;
+    width: 33%;
+
+    > a {
+      background-color: $rdash-sidebar-footer-bg;
+      color: $rdash-sidebar-list-color;
+      display: block;
+      font-size: 12px;
+      line-height: 18px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      position: relative;
+
+      span {
+        display: none;
+      }
+
+      &:hover,
+      &:focus {
+        border-top: 2px solid $rdash-sidebar-list-border-active;
+        background-color: darken($rdash-sidebar-footer-bg, 3.5%);//$rdash-sidebar-footer-active-color;
+        padding-top: 8px;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+/*div.sidebar-footer {
+  background: $rdash-sidebar-footer-bg;
+  position: absolute;
+  height: 40px;
+  bottom: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  transition: all .6s ease 0s;
+  div {
+    a {
+      color: $rdash-sidebar-list-color;
+      font-size: 12px;
+      line-height: 43px;
+      &:hover
+      &:focus,
+      &:active {
+        color: $rdash-sidebar-list-active-color;
+        text-decoration: none;
+      }
+    }
+  }
+}*/
+
+/*  End Sidebar –––––––––––––––––––––––––––––––––– */
+
+
+
+
+
+
+
+
+/*  Widgets
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.widget {
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+  background: $rdash-widget-bg;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  border-color: $rdash-widget-border-color;
+  .widget-header .pagination,
+  .widget-footer .pagination {
+    margin: 0;
+  }
+  .widget-header {
+    color: $rdash-widget-header-text-color;
+    background-color: $rdash-widget-header-bg;
+    padding: 10px 15px;
+    border-bottom: 1px solid $rdash-widget-border-color;
+    line-height: 30px;
+    i {
+      margin-right: 5px;
+    }
+    input {
+      width: 25%;
+    }
+  }
+  .widget-body {
+    padding: 20px;
+    table {
+      thead {
+        background: $rdash-widget-table-bg;
+        * {
+          font-size: 14px !important;
+        }
+      }
+      tbody * {
+        font-size: 13px !important;
+      }
+    }
+    .error {
+      color: $rdash-widget-text-error-color;
+    }
+    button {
+      margin-left: 5px;
+    }
+    div.alert {
+      margin-bottom: 10px;
+    }
+    &.large {
+      height: 350px;
+      overflow-y: auto;
+    }
+    &.medium {
+      height: 250px;
+      overflow-y: auto;
+    }
+    &.small {
+      height: 150px;
+      overflow-y: auto;
+    }
+    &.no-padding {
+      padding: 0;
+      .error,
+      .message {
+        padding: 20px;
+      }
+    }
+  }
+  .widget-footer {
+    border-top: 1px solid $rdash-widget-border-color;
+    padding: 10px;
+  }
+  .widget-icon {
+    background: $rdash-sidebar-bg;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    text-align: center;
+    vertical-align: middle;
+    margin-right: 15px;
+    i {
+      line-height: 66px;
+      color: $rdash-widget-icon-color;
+      font-size: 30px;
+    }
+  }
+  .widget-title .pagination,
+  .widget-footer .pagination {
+    margin: 0;
+  }
+  .widget-content .title {
+    font-size: 28px;
+    display: block;
+  }
+}
+
+/*  End Widgets –––––––––––––––––––––––––––––––––– */

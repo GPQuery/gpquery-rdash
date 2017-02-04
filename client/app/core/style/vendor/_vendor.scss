@@ -1,16 +1,26 @@
+/**
+ * Vendor
+ *
+ * @description
+ *
+ */
+
+
+
+
+
+
+
+
 /* Vendor Variable Overrides
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 /**
  *  If you want to override some bootstrap variables, you have to change values here.
- *  The list of variables are listed here bower_components/bootstrap-sass/assets/stylesheets/bootstrap/_variables.scss
+ *  The list of variables are listed here bower_components/bootstrap-sass/assets/assets/stylesheets/bootstrap/_variables.scss
  */
 
-$icon-font-path:      "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
-$fa-font-path:        "../../bower_components/font-awesome/fonts";
-$ionicons-font-path:  "../../bower_components/Ionicons/fonts";
-
-/* ––––––––––––––––––––––––––––––––––––––––––––––– */
+/* End Vendor Variable Overrides ––––––––––––––––– */
 
 
 
@@ -22,6 +32,9 @@ $ionicons-font-path:  "../../bower_components/Ionicons/fonts";
 /* Vendor Manual Imports
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
-@import "../../bower_components/font-awesome/scss/font-awesome.scss";
-@import "../../bower_components/Ionicons/scss/ionicons.scss";
+@import 'rdash';
+//@import '../../bower_components/font-awesome/scss/font-awesome';
+//@import '../../bower_components/Ionicons/scss/ionicons';
 @import 'race-font';
+
+/* End Vendor Manual Imports ––––––––––––––––––––– */

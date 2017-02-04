@@ -1,0 +1,44 @@
+/**
+ * Angular Toastr
+ *
+ * @description Override angular-toastr styles
+ * @link https://github.com/Foxandxss/angular-toastr/
+ */
+
+.gp-toast {
+
+  &.toast {
+    background-color: $gray-darker; // #030303;
+  }
+
+  &.toast-success {
+    background-color: $brand-success; // #51A351;
+  }
+
+  &.toast-error {
+    background-color: $brand-danger; // #BD362F;
+  }
+
+  &.toast-info {
+    background-color: $brand-primary;  // #2F96B4;
+  }
+
+  &.toast-warning {
+    background-color: $brand-warning; // #F89406;
+  }
+
+}
+
+// TODO: Integrate Material styles for hover
+// https://github.com/angular/material/blob/master/src/components/toast/toast.scss
+// https://github.com/angular/material/blob/master/src/components/button/button.scss
+
+#toast-container {
+  .toast.gp-toast {
+
+
+    &:hover {
+
+    }
+  }
+}
